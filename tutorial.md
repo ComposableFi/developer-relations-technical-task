@@ -1,1 +1,2 @@
-Salsa Serde
+# Salsa Serde! 
+## Familiarizing ourselves with the Serde Library
