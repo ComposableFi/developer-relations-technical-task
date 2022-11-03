@@ -180,7 +180,8 @@ Since we are not debugging our recipe, there is no need for `:?`
 ### Run your code : Part 3 ✨
 
 ![](https://i.imgur.com/SngW46h.png)
-![](https://i.imgur.com/KR30JW0.png)  By the holy light... The Salsa Serde has finally arrived.
+![](https://i.imgur.com/KR30JW0.png)  
+By the holy light... The Salsa Serde has finally arrived.
 
 ---
 
