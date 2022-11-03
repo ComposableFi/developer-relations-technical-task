@@ -74,11 +74,11 @@ pub struct Salsa {
     pub tabasco: bool,
 }
 ```
-> **Delicious** ...
+> **yummy** ...
 
 Now that we know what ingredients we need to make *Salsa Serde*, we still need to know how much of each ingredient we will need to use. 
 
-In the scope of the main function, create a salsa **Struct** and label how much of each ingredient you will need to make the "best salsa recipe in the world" -- according to the [Washington Grow](https://www.wagrown.com/recipes/speedy-blender-salsa/?gclid=Cj0KCQjwqoibBhDUARIsAH2OpWgnhIP0pynFfnoWVMPgp81ohgWpH04SRuzgBQMjVPCFZC8CIKuKPv8aAndQEALw_wcB).
+In the scope of the main function, create a salsa **Struct** and lable how much of each ingredient you will need to make the "best salsa recipe in the world" -- according to the [washington grow](https://www.wagrown.com/recipes/speedy-blender-salsa/?gclid=Cj0KCQjwqoibBhDUARIsAH2OpWgnhIP0pynFfnoWVMPgp81ohgWpH04SRuzgBQMjVPCFZC8CIKuKPv8aAndQEALw_wcB).
 ```
  let salsa = Salsa { 
         tomatoe: 3, 
@@ -227,3 +227,4 @@ Since we are not debugging our recipe, there is no need for `:?`
 
 ### Final words
 I hope this Tutorial was fun for you to go through. **Serde** is a powerful tool with many other features that you should take the time to explore in depth to apply to your own projects. It's the perfect library for formating data you recieve from API's for real time web applications, and for quickly parsing various file types for Web Assembly programs.
+
