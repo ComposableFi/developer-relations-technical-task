@@ -74,11 +74,11 @@ pub struct Salsa {
     pub tabasco: bool,
 }
 ```
-> **yummy** ...
+> **Delicious** ...
 
 Now that we know what ingredients we need to make *Salsa Serde*, we still need to know how much of each ingredient we will need to use. 
 
-In the scope of the main function, create a salsa **Struct** and lable how much of each ingredient you will need to make the "best salsa recipe in the world" -- according to the [washington grow](https://www.wagrown.com/recipes/speedy-blender-salsa/?gclid=Cj0KCQjwqoibBhDUARIsAH2OpWgnhIP0pynFfnoWVMPgp81ohgWpH04SRuzgBQMjVPCFZC8CIKuKPv8aAndQEALw_wcB).
+In the scope of the main function, create a salsa **Struct** and label how much of each ingredient you will need to make the "best salsa recipe in the world" -- according to the [Washington Grow](https://www.wagrown.com/recipes/speedy-blender-salsa/?gclid=Cj0KCQjwqoibBhDUARIsAH2OpWgnhIP0pynFfnoWVMPgp81ohgWpH04SRuzgBQMjVPCFZC8CIKuKPv8aAndQEALw_wcB).
 ```
  let salsa = Salsa { 
         tomatoe: 3, 
