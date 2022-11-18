@@ -1,0 +1,120 @@
+## Rust Serde Tutorial
+
+Using the [Serde](https://serde.rs/) library to restructure Rust into JSON.
+
+---
+Overview:
+
+Serde is a framework for serializing and deserializing Rust data structures efficiently and generically.
+
+The Serde ecosystem consists of data structures that know how to serialize and deserialize themselves along with data formats that know how to serialize and deserialize other things. Serde provides the layer by which these two groups interact with each other, allowing any supported data structure to be serialized and deserialized using any supported data format.
+
+In this Tutorial, we'll use the example of a car to refer to individual parts of a structure, and serialize/deserialize those parts using Serde.
+
+Additionally, we'll be have a section reading the Coinbase API using Rust.
+
+---
+### Getting Started
+> For this Tutorial, we'll be using Visual Studio Code.
+> Open your command line, and follow along!
+* First, you'll need to make sure you have [rust installed](https://www.rust-lang.org/tools/install) on your machine if you don't already.
+`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
+ `$ cd Serde`
+ å
+*  Open your code editor
+`$ code .`
+
+* In your `Cargo.toml file`, add the following snippet under [package]
+```
+name = "Serde"
+version = "0.1.0"
+edition = "2021"
+```
+
+* In your `Cargo.toml file`, add the following snippet under **[dependencies]**
+
+```serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+```
+
+* Lastly, let's quickly build the project. 
+Open your Command line in VSCode [`^`+`~`] and enter `cargo build`
+* Lastly, let's quickly build the project to import our dependencies. 
+Open your command line in VSCode [`^`+`~`] and run `cargo build`
+
+---
+Serde is a powerful tool that developers can use to turn Rust code into a wide range of other filing formats. 
+
+This process is known as '**Serialization**', which can support nearly all data types in Rust.
+
+
+Serde also allows us to '**Deserialize**' files such as JSON data structures into custom formats we program in Rust. 
+
+### Start Coding
+
+1. We'll first want to import the nessesary crates into our working directory above the main function.
+```
+use serde::{Deserialize, Serialize};
+use serde_json;
+```
+Serde provides a derive macro to generate implementations of the Serialize and Deserialize traits for data structures defined in your crate, allowing them to be represented conveniently in all of Serde's data formats. We will be including this in our program as shown:
+2.
+```
+#[derive(Debug, Deserialize, PartialEq, Eq, Serialize)]
+```
+ 2c. `Cargo build`
+
+3. Import modules into the main file.
+
+3a. Use `Serde::{Deserialize, serialize}; `
+    use `serde_json` in order to be able to invoke functions to serialize and deserialize structures into JSON strings.
+
+3b. Create  definition of a structure: 
+```
+Pub Struct Car {
+
+	pub top_speed: i32,
+	pub make: String,
+	pub model: String,
+	pub on: bool,
+}
+```
+
+>Structure that comes from a hypothetical table named Car  
+
+3c. Define an instance of the structure we just defined, inside the main function:
+
+```
+fn main ( ) }
+    let car: Car = Car { 
+        top_speed: 120,
+        make: “Ford”.to_string(),
+        model: "Focus".to_string(),
+        on: false,
+        },
+}
+```
+4. In order to serialize this instance of a structure of type car into a JSON string you’re going to use the `to_string` function of the serde_json library: `serde_json::to_string` and provide a pointer to our instance, and unwrap to get our string type instance, and use `println!(“Serialize: {}”, json_str);`  Macro to print `json_str`via `{}` placeholder.
+
+>Serialize the Struct into a JSON string  
+ 
+ `let json_str = serde_json::to_string(&work).unwrap(); println!(“Serialize: {}”, json_str);`  
+ 
+ 4b. Test with: $ cargo run
+ 
+ 5. In order to deserialize this instance of a structure of type work from a JSON string you’re going to use the from_str function of the serde_json library: `serde_json::from_str`
+
+ 5b. Convert a string to a pointer with .as_str()
+        
+        // deserialize the JSON string into another Rust struct
+        
+`
+let car_from_json : Car = serde_json::from_str(json_str.as_str()).unwrap(); println!(“Deserialize: {:?}”,  car_from_json);
+`
+
+ 5c. Use `println!(“Deserialize: {:?}”, car_from_json);` macro to print `car_from_json` via `{:?}` placeholder.
+
+ 5d. Test with: `$ cargo run`
+
+
+
